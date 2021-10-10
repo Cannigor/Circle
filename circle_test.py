@@ -43,7 +43,9 @@ while camera.isOpened():
     else:
         avg_up = 255  # белый
         if timer_up and time_first is not None:
-            time_current = round((datetime.now() - time_first).microseconds / 1000)
+            time_st = datetime.now() - time_first
+            milliseconds = time_st.seconds * 1000000 + time_st.microseconds / 1000
+            time_current = round(milliseconds)
             print(f'Время смены черного на белый пиксель: {time_current} миллисекунд')
             time_change = time_current
             timer_up = False
