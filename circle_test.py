@@ -10,7 +10,7 @@ time_change = None
 # Проверка на работу таймера
 timer_up = None
 
-camera = cv2.VideoCapture(0)
+camera = cv2.VideoCapture(0,  cv2.CAP_DSHOW)
 while camera.isOpened():
     success, img = camera.read()
     img = cv2.resize(img, (img.shape[1] * 2, img.shape[0] * 2))
